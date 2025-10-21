@@ -1,0 +1,35 @@
+/* Илүү цэвэрхэн, хэрэглэгчийн пэйж шиг харагдуулах */
+:root {
+  --str-font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --str-chat__primary-color: #2563eb;
+  --str-chat__text-color: #0f172a;
+  --str-chat__background-color: #ffffff;
+}
+
+/* Гол контейнерийг төвлөрүүлж, өргөнийг зохицуулна */
+.str-chat__container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* Миний мессежийг тодруулж, дугуй булантай болгоно */
+.str-chat__message-simple--me .str-chat__message-bubble {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 14px;
+}
+
+/* Нөгөө талын мессеж */
+.str-chat__message-bubble {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+/* Оруулгын (input) хэсгийг цэвэрхэн */
+.str-chat__message-input {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
