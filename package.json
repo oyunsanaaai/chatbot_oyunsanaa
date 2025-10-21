@@ -10,5 +10,6 @@
     "stream-chat": "^8.39.0",
     "stream-chat-react": "^11.24.1"
   },
-  "devDependencies": { "vite": "^5.0.0" }
+  "devDependencies": { "vite": "^5.0.0" 
+  "@vitejs/plugin-react": "^4.2.0"
 }
