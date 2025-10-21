@@ -2,8 +2,9 @@ import { StreamChat } from 'stream-chat';
 
 export async function onRequestGet() {
   try {
-    const apiKey = 'vrsh2xymnkrj'; // ← Stream Dashboard → Chat Overview → App Access Keys
-    const apiSecret = 'ТЭНДХАРАГДАЖБАЙГААСЕКРЕТ'; // ← Click to reveal хийж хуул
+    // Stream-ийн Chat Overview доторх "App Access Keys"-оос хуулна
+    const apiKey = 'vrsh2xymnkrj'; // ← энэ чинь байгаа
+    const apiSecret = 'ТЭНДХАРАГДАЖБАЙГАА_SECRET_ТАНЫ'; // ← "Click to reveal" хийж хуул
     const userId = 'oyunsanaa';
 
     const serverClient = StreamChat.getInstance(apiKey, apiSecret);
