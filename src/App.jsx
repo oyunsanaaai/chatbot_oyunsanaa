@@ -1,18 +1,21 @@
-import { useEffect, useState } from 'react'
-import { StreamChat } from 'stream-chat'
-import { Chat, Channel, MessageList, MessageInput } from 'stream-chat-react'
-import 'stream-chat-react/dist/css/v2/index.css'
+import { StreamChat } from 'stream-chat';
 
-export default function App(){
-  const [client,setClient]=useState(),[ch,setCh]=useState()
-  useEffect(()=>{(async()=>{
-    const r=await fetch('/api/token').then(r=>r.json())
-    const c=StreamChat.getInstance(r.apiKey); await c.connectUser(r.user, r.token)
-    const chn=c.channel('messaging', r.channelId); await chn.watch()
-    setClient(c); setCh(chn)
-  })()},[])
-  if(!client||!ch) return null
-  return <Chat client={client} theme="str-chat__theme-dark">
-    <Channel channel={ch}><MessageList/><MessageInput/></Channel>
-  </Chat>
+export async function onRequestGet() {
+  const apiKey = 'ТАНЫ_API_KEY';
+  const apiSecret = 'ТАНЫ_API_SECRET';
+
+  if (!apiKey || !apiSecret) {
+    return new Response('Missing Stream credentials', { status: 500 });
+  }
+
+  const server = StreamChat.getInstance(apiKey, apiSecret);
+
+  const user = { id: 'oyunsanaa', name: 'Oyunsanaa' };
+  const token = server.createToken(user.id);
+  const channelId = 'oyunsanaa-general';
+
+  return new Response(
+    JSON.stringify({ apiKey, user, token, channelId }),
+    { headers: { 'Content-Type': 'application/json' } }
+  );
 }
