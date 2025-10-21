@@ -33,4 +33,12 @@ export default function App() {
       </Channel>
     </Chat>
   )
+  import VoiceButton from './VoiceButton'   // дээр талд import хийнэ
+
+// ...
+<Channel channel={channel}>
+  <MessageList />
+  <MessageInput />
+  <VoiceButton channel={channel} />
+</Channel>
 }
